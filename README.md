@@ -1,16 +1,10 @@
-```
-​```flow
-st=>start: 开始框
-op=>operation: 处理框
-cond=>condition: 判断框(是或否?)
-sub1=>subroutine: 子流程
-io=>inputoutput: 输入输出框
-e=>end: 结束框
-st->op->cond
-cond(yes)->io->e
-cond(no)->sub1(right)->op
-​```
-```
+# css权威指南笔记
 
-# liby
+### 第一章 css 和 文档
+
+书中例子链接：[https://meyerweb.github.io/csstdg4figs/01-css-and-documents/index.html]
+
+
+
+# typescript练习笔记
 
