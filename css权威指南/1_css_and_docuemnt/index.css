@@ -1,0 +1,6 @@
+.list-speci-block {
+  list-style: upper-roman;
+}
+
+/* display:list-item
+   为元素内容生成一个块型盒，随后再生成一个列表型的行内盒 */
