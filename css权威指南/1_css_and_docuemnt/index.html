@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="./index.css">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>css与文档</title>
+  <!-- link必须放在head元素中 -->
+  <link rel="stylesheet" href="./index.css">
+  <style type="text/css">
+    @import url(./indexPlus.css);
+    /* @import 必须放到样式表的开头 除此别无限制*/
+  </style>
+</head>
 
-  <body>
-    <!-- 置换元素 -->
-    <img src="./tcp.jpg" alt="">
-    <input type="text" name="" value="">
+<body>
+  <!-- 置换元素 -->
+  <img src="./tcp.jpg" alt="">
+  <input type="text" name="" value="">
 
-    <!-- 块级元素  -->
-    <p>相关：<em>https://meyerweb.github.io/csstdg4figs/01-css-and-documents/index.html</em></p>
-    <!-- 列表项目是特殊的块级元素（多出了记号） -->
-    <ul class="list-speci-block">
-      <li>笔记：</li>
-      <li>上册 13p display的属性们</li>
-      <li>至此处：inline、block、list-item</li>
-      <li>XML文档没有固定的显示方式，完全自定义</li>
-    </ul>
+  <!-- 块级元素  -->
+  <p>相关：<em>https://meyerweb.github.io/csstdg4figs/01-css-and-documents/index.html</em></p>
+  <!-- 列表项目是特殊的块级元素（多出了记号） -->
+  <ul class="list-speci-block">
+    <li>笔记：</li>
+    <li>上册 13p display的属性们</li>
+    <li>至此处：inline、block、list-item</li>
+    <li>XML文档没有固定的显示方式，完全自定义</li>
+  </ul>
 
-    <ul>
-      <ol start="0">
-        <li>css 应用到 html</li>
-        <li>文档内部应该有一定的结构</li>
-        <li>d</li>
-        <li>f</li>
-      </ol>
-    </ul>
-    <!-- 行内元素 -->
-    <!-- html需要遵循嵌套关系 css可以通过改变display改变显示方式 -->
+  <ul>
+    <ol start="0">
+      <li>css 应用到 html</li>
+      <li>文档内部应该有一定的结构</li>
+      <li>web遇到link时，会查找并加载，使用样式表中的渲染html文档</li>
+      <li>外部样式表，不能包含任何文档标记</li>
+    </ol>
+  </ul>
 
 
-    <script type="text/javascript" src="./index.js"></script>
-  </body>
+  <h6>属性：</h6>
+  <font size="+4" face="MS Serif, New York, serif" color="blue">I love you</font>
+  <br />
+  <font size="-1" face="华文琥珀" color="#FFCCFF">爱HTML</font>
+
+  <!-- 行内元素 -->
+  <!-- html需要遵循嵌套关系 css可以通过改变display改变显示方式 -->
+  <br />
+  
+  <input list="companys" />
+  <datalist id="companys">
+    <option value="Apple">
+    <option value="Microsoft">
+    <option value="Github">
+  </datalist>
+
+  <script type="text/javascript" src="./index.js"></script>
+</body>
 
 </html>
