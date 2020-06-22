@@ -4,21 +4,33 @@
 <head>
   <meta charset="utf-8">
   <title>css与文档</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <!-- link必须放在head元素中 -->
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./index.css" title="default">
+  <link rel="alternate stylesheet" href="./css/style1.css" title="style1">
+  <link rel="alternate stylesheet" href="./css/style2.css" title="style2">
+
+  <!-- rel type href media title 18page -->
   <style type="text/css">
     @import url(./indexPlus.css);
     /* @import 必须放到样式表的开头 除此别无限制*/
   </style>
+
 </head>
 
 <body>
   <!-- 置换元素 -->
   <img src="./tcp.jpg" alt="">
-  <input type="text" name="" value="">
-
+  <input type="text" name="" value=""> <br />
+  <button type="button" name="button" onclick="showDetail('style1')">换风格</button>
+  <p>
+    <b>候选样式表</b><br />
+    <blockquote>
+      浏览器支持<i>候选样式表</i>的话，会使用link元素title属性值<u>生成候选样式表</u>
+    </blockquote>
+  </p>
   <!-- 块级元素  -->
-  <p>相关：<em>https://meyerweb.github.io/csstdg4figs/01-css-and-documents/index.html</em></p>
+  <p class="style-link-p">相关：<em>https://meyerweb.github.io/csstdg4figs/01-css-and-documents/index.html</em></p>
   <!-- 列表项目是特殊的块级元素（多出了记号） -->
   <ul class="list-speci-block">
     <li>笔记：</li>
@@ -38,14 +50,14 @@
 
 
   <h6>属性：</h6>
-  <font size="+4" face="MS Serif, New York, serif" color="blue">I love you</font>
+  <font size="+4" face="MS Serif, New York, serif" color="blue">哇</font>
   <br />
-  <font size="-1" face="华文琥珀" color="#FFCCFF">爱HTML</font>
+  <font size="-1" face="华文琥珀" color="#FFCCFF">华文琥珀</font>
 
   <!-- 行内元素 -->
   <!-- html需要遵循嵌套关系 css可以通过改变display改变显示方式 -->
   <br />
-  
+
   <input list="companys" />
   <datalist id="companys">
     <option value="Apple">
@@ -53,7 +65,34 @@
     <option value="Github">
   </datalist>
 
+  <div class="document-style-assemble">
+    <b>文档常用标签</b>
+    <strong>strong-粗体字样式</strong>
+    <p>
+      <i>i-斜体样式</i> <br />
+      <em>em-斜体样式</em>
+    <p>
+      <u>u-下划线样式</u>
+      x<sup>2</sup>
+      log<sub>10</sub>100
+    <p>
+      <s>s-删除线样式</s>
+      <strike>strike-删除线样式</strike>
+
+    <pre>
+    public class Hello{
+      public static void main(String[] args){
+          System.out.println("&ltpre&gt");
+        }
+    }
+  </pre>
+    <blockquote>blockquote标签</blockquote>
+    <address>
+      address：某学校
+    </address>
+  </div>
   <script type="text/javascript" src="./index.js"></script>
+
 </body>
 
 </html>
