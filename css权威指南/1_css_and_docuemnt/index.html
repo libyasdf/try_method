@@ -12,8 +12,12 @@
 
   <!-- rel type href media title 18page -->
   <style type="text/css">
-    @import url(./indexPlus.css);
+    @import url(./indexPlus.css) all;
     /* @import 必须放到样式表的开头 除此别无限制*/
+    /* 媒体描述符：screen; projection, print; */
+    /* 只有这一种注释方式 */
+    /* 多个关键字必须用空白分开 */
+
   </style>
 
 </head>
@@ -27,6 +31,73 @@
     <b>候选样式表</b><br />
     <blockquote>
       浏览器支持<i>候选样式表</i>的话，会使用link元素title属性值<u>生成候选样式表</u>
+      <p>一样的title值，属于同一组style link</p>
+      <p>如果不为样式表无<i>标题</i>，就是永久样式表，<b>始终</b>用于显示文档</p>
+    </blockquote>
+
+    <b>style元素</b><br/>
+    <blockquote cite="">
+      <p>应当始终设定<i>type</i>属性</p>
+      <p>style标签之间的部分为<i>文档样式表</i>或<i>嵌入样式表</i></p>
+    </blockquote>
+
+    <b>@import指令</b>
+    <blockquote cite="">
+      <p>与link的区别只在于：句法和「指令位置」</p>
+      <p>@import会使用<em>每一个</em>样式表,都会用于显示文档</p>
+    </blockquote>
+
+    <b>使用HTTP首部</b>
+    <blockquote cite="">
+      22page
+    </blockquote>
+
+    <b>行内样式</b>
+    <blockquote cite="">
+      除body之外的标签，所有html标签都能设置style.
+      不比font标签号多少，只是提供了灵活性
+    </blockquote>
+
+    <b>厂商前缀</b>
+    <blockquote cite="">
+      <u>浏览器厂商测试新特性 保证兼容而是使用的</u>
+      <p>-epub- <i>国际数字出版论坛制定的EPUB格式</i></p>
+      <p>-moz- <i>firefox</i></p>
+      <p>-ms- <i>IE</i></p>
+      <p>-o- <i>opera</i></p>
+      <p>-webkit- <i>safari chrome</i></p>
+    </blockquote>
+
+    <b>媒体查询</b>
+    <blockquote>
+      <p>projection\all\screen\print\handheld(移动设备-行为不一致)</p>
+      <ul>
+        <li>link media</li>
+        <li>style media</li>
+        <li>@import</li>
+        <li>@media</li>
+      </ul>
+    </blockquote>
+    <pre>
+      link标签中 media="screen, print"
+      style标签中 media="screen, print"
+      @import  
+      @media screen,print {...}
+    </pre>
+
+    <b>媒体描述符</b>
+    <blockquote>
+      <u>彩打</u>
+      <ul>
+        <li>link标签里 media="print and (color)"</li>
+        <li>@import url() print and (color)</li>      
+        <li>彩色媒体都符合（color: 16）</li>
+        <li>(color) 这个媒体是彩色的吗？</li>
+        <li>link标签里 media="print and (color), screen and (color-depth: 8)"</li>
+        <li>@import url() print and (color), screen and (color-depth: 8)</li>        
+      </ul>
+      <i>只要其中一个满足，就会应用到指定样式表</i>
+      <i>and not-取反 only</i>
     </blockquote>
   </p>
   <!-- 块级元素  -->
@@ -44,7 +115,7 @@
       <li>css 应用到 html</li>
       <li>文档内部应该有一定的结构</li>
       <li>web遇到link时，会查找并加载，使用样式表中的渲染html文档</li>
-      <li>外部样式表，不能包含任何文档标记</li>
+      <li>外部样式表，不能包含任何文档标记<b>(所以可用@import来引入)</b></li>
     </ol>
   </ul>
 
