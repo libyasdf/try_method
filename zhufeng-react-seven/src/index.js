@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.less';
 
 ReactDOM.render(
   <React.StrictMode>
-    <div></div>
+    <div className='root-div-react'>gan</div>
   </React.StrictMode>,
   document.getElementById('root')
 );
